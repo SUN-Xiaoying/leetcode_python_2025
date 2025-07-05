@@ -10,6 +10,15 @@ source venv/bin/activate
 python -m pip install --upgrade pip
 ```
 
+
+## Python naming
+|Concept| Naming                                  ||
+|---|-----------------------------------------|---|
+|Function and Variable Names| Lowercase with underscores (snake_case) |`string_utils.py`,`math_helpers.py`|
+|Class Names| Camel                                   |`class DataLoader:`|
+Global Variable (Private)|Prefix with an underscore _|`_internal_var = 42`|
+
+
 # Jackpot
 
 > No, you do not need to add a semicolon (;) at the end of every statement in Python. **Python uses line breaks to determine the end of a statement, making ; optional in most cases**.
