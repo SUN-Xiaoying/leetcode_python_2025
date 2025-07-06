@@ -27,6 +27,28 @@ def build_tree_from_list(values):
 
     return root
 
+def tree_to_array(root):
+    if not root:
+        return []
+
+    result = []
+    queue = deque([root])
+
+    while queue:
+        node = queue.popleft()
+
+        if node:
+            result.append(node.val)
+            queue.append(node.left)
+            queue.append(node.right)
+        else:
+            result.append(None)
+
+    # Trim trailing Nones
+    while result and result[-1] is None:
+        result.pop()
+
+    return result
 
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
