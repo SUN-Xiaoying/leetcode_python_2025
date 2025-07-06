@@ -26,3 +26,9 @@ Global Variable (Private)|Prefix with an underscore _|`_internal_var = 42`|
 |Concept|Code|
 |---|---|
 |HashMap|`dict()`|
+
+## Mid
+
+```python
+    mid = left + (right - left) // 2
+```
