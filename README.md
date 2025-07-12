@@ -32,3 +32,9 @@ Global Variable (Private)|Prefix with an underscore _|`_internal_var = 42`|
 ```python
     mid = left + (right - left) // 2
 ```
+
+## Sum
+
+```python
+    expected_sum = n * (n + 1) // 2
+```
