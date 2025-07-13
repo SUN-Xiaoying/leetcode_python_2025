@@ -27,6 +27,11 @@ Global Variable (Private)|Prefix with an underscore _|`_internal_var = 42`|
 |---|---|
 |HashMap|`dict()`|
 
+## Swap
+```python
+    nums[i], nums[j] = nums[j], nums[i]  # Swap, no extra space
+```
+
 ## Mid
 
 ```python
