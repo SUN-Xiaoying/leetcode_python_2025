@@ -38,3 +38,22 @@ Global Variable (Private)|Prefix with an underscore _|`_internal_var = 42`|
 ```python
     expected_sum = n * (n + 1) // 2
 ```
+
+## Range
+
+`range(start, stop, step)`
+
+```python
+
+    for i in range(10, 0, -1):
+        10
+        9
+        8
+        7
+        6
+        5
+        4
+        3
+        2
+        1
+```
