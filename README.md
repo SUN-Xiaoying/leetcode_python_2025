@@ -27,9 +27,12 @@ Global Variable (Private)|Prefix with an underscore _|`_internal_var = 42`|
 |---|---|
 |HashMap|`dict()`|
 
-## Swap
+
+## MAX / MIN
+
 ```python
-    nums[i], nums[j] = nums[j], nums[i]  # Swap, no extra space
+    max_value = float('-inf')  # for smallest possible value
+    min_value = float('inf')   # for largest possible value
 ```
 
 ## Mid
