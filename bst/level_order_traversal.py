@@ -8,6 +8,31 @@ from bst.bt_utils import TreeNode, build_tree_from_list, tree_to_array
 
 
 class Solution:
+    # 2ms Beats 23.59%
+    def levelOrder2(self, root: Optional[TreeNode]) -> List[List[int]]:
+        if not root:
+            return []
+        queue = deque([root])
+        result = []
+
+        while queue:
+            q_len = len(queue)
+            level = []
+            # 遍历
+            for _ in range(q_len):
+                node = queue.popleft()
+                if node:
+                    # 收集
+                    level.append(node.val)
+                    if node.left:
+                        queue.append(node.left)
+                    if node.right:
+                        queue.append(node.right)
+            if level:
+                result.append(level)
+        return result
+
+
     #   0ms Beats 100.00%
     #   弹出x
     #   有左加左，有右加右
@@ -16,8 +41,8 @@ class Solution:
             return []
         queue = deque() # 现在是队列
         result = []
-        tree_map = {}
-        level=0 # python don't need it ?
+        tree_map = {} # space for speed
+        level=0
 
         if root:
             queue.append(root)
@@ -27,7 +52,7 @@ class Solution:
                 node = queue.popleft()
                 level = tree_map[node]
                 if len(result) <= level:
-                    result.append([])
+                    result.append([]) # You need to make sure result has enough sublists to support result[level].
                 result[level].append(node.val)
                 #   有左加左
                 if node.left:
