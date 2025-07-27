@@ -8,29 +8,39 @@ from bst.bt_utils import TreeNode, build_tree_from_list, tree_to_array
 
 
 class Solution:
-    def levelOrder_wrong(self, root: Optional[TreeNode]) -> List[List[int]]:
+    #   0ms Beats 100.00%
+    #   弹出x
+    #   有左加左，有右加右
+    def levelOrder1(self, root: Optional[TreeNode]) -> List[List[int]]:
         if not root:
             return []
-        array = tree_to_array(root)
-        result: List[List[int]] = []
-        temp : List[int] = []
-        level = 0
-        index = 0
-        while index < len(array):
-            node_nums = 2 ** level
-            while node_nums >0 and index < len(array):
-                if array[index] is not None:
-                    temp.append(array[index])
-                index += 1
-                node_nums -= 1
-            level += 1
-            if temp:
-                result.append(temp)
-            temp = []
+        queue = deque() # 现在是队列
+        result = []
+        tree_map = {}
+        level=0 # python don't need it ?
+
+        if root:
+            queue.append(root)
+            tree_map[root] = level
+            while queue:
+                #   弹出x
+                node = queue.popleft()
+                level = tree_map[node]
+                if len(result) <= level:
+                    result.append([])
+                result[level].append(node.val)
+                #   有左加左
+                if node.left:
+                    queue.append(node.left)
+                    tree_map[node.left] = level+1
+                #   有右加右
+                if node.right:
+                    queue.append(node.right)
+                    tree_map[node.right] = level+1
 
         return result
 
-    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+    def levelOrder_neetcode(self, root: Optional[TreeNode]) -> List[List[int]]:
         if not root:
             return []
         queue = deque([root])
@@ -54,6 +64,6 @@ class Solution:
 
 if __name__ == "__main__":
     sol = Solution()
-    # tree = build_tree_from_list([3,9,20,None,None,15,7])
-    tree = build_tree_from_list([1,2])
-    print(sol.levelOrder(tree))
+    tree = build_tree_from_list([3,9,20,None,None,15,7])
+    # tree = build_tree_from_list([1,2])
+    print(sol.levelOrder1(tree))
