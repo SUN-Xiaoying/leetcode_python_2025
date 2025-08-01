@@ -28,11 +28,24 @@ Global Variable (Private)|Prefix with an underscore _|`_internal_var = 42`|
 |HashMap|`dict()`|
 
 
+## Remove Duplicate
+
+```python
+    nums = list(set(nums))  # remove duplicates
+```
+
 ## MAX / MIN
 
 ```python
     max_value = float('-inf')  # for smallest possible value
     min_value = float('inf')   # for largest possible value
+```
+
+## Swap
+
+```python
+    # Swap elements at index 1 and 3
+    arr[1], arr[3] = arr[3], arr[1]
 ```
 
 ## Mid
