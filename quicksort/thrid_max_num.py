@@ -4,8 +4,27 @@ from typing import List
 
 
 class Solution:
-    # 23ms Beats 5.02%
+
+    # Greedy
+    # 0ms Beats 100.00%
     def thirdMax(self, nums: List[int]) -> int:
+        first, second, third = None, None, None
+        nums = list(set(nums))
+        for num in nums:
+            if first is None or num>first:
+                first, second, third = num, first, second
+            elif second is None or num>second:
+                second, third = num, second
+            elif third is None or num > third:
+                third = num
+            else:
+                continue
+
+        return third if third is not None else first
+
+
+    # 23ms Beats 5.02%
+    def thirdMax_mine(self, nums: List[int]) -> int:
 
         def quciksort(left: int, right: int):
             if left >= right: return
