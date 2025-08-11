@@ -1,7 +1,7 @@
 # https://leetcode.com/problems/reverse-linked-list/description/
 from typing import Optional
 
-from link_list.utils import ListNode
+from linklist.utils import ListNode
 
 
 class Solution:

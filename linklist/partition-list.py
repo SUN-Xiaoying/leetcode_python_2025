@@ -1,7 +1,7 @@
 # https://leetcode.com/problems/partition-list/description/?envType=problem-list-v2&envId=linked-list
 from typing import Optional
 
-from link_list.utils import ListNode
+from linklist.utils import ListNode
 
 
 class Solution:
