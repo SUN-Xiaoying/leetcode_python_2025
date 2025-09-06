@@ -48,8 +48,8 @@ Global Variable (Private)|Prefix with an underscore _|`_internal_var = 42`|
     arr[1], arr[3] = arr[3], arr[1]
 ```
 
-* will generate extra space
-
+* will take up extra space
+ 
 ## Mid
 
 ```python
