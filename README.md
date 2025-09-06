@@ -35,6 +35,16 @@ Global Variable (Private)|Prefix with an underscore _|`_internal_var = 42`|
 ```
 
 ## MAX / MIN
+### Int
+
+```python
+import sys
+
+INT_MAX = sys.maxsize        # usually 2**63 - 1 on 64-bit systems
+INT_MIN = -sys.maxsize - 1   # usually -2**63
+```
+
+### Float
 
 ```python
     max_value = float('-inf')  # for smallest possible value

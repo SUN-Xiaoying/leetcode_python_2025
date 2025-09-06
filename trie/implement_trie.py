@@ -1,4 +1,4 @@
-#
+# https://leetcode.com/problems/implement-trie-prefix-tree/description/?envType=problem-list-v2&envId=trie
 
 class TrieNode:
     def __init__(self):
@@ -6,8 +6,8 @@ class TrieNode:
         self.end_count = 0
         self.nexts = [None]*26
 
+# 72ms Beats 16.66%
 class Trie:
-
     def __init__(self):
         self.root = TrieNode()
 
