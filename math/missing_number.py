@@ -14,7 +14,7 @@ class Solution:
 
         return len(nums)
 
-    # Your runtime beats 48.38 % of python3 submissions
+    # 0 ms beats 100 %
     # Sum faster than Sort
     def missingNumber(self, nums: List[int]) -> int:
         n = len(nums)
