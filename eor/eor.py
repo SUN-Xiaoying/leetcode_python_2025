@@ -6,7 +6,6 @@ class Solution:
     # non-negative == 1
     # negative == 0
     def sign(self, n: int):
-        n = n & 0xFFFFFFFF
         if n & 0x80000000:  # cannot use return flip(n>>31)
             return 0
         return 1
