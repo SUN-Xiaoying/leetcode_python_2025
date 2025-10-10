@@ -4,9 +4,14 @@ class Solution:
 
     # bin(e) converts an integer to a binary string with a "0b" prefix.
     # TODO: Best Solution
+    def addBinary(self, a: str, b: str) -> str:
+        c = int(a, 2)
+        d = int(b, 2)
+
+        return bin(c+d)[2:]
 
     # 3ms Beats 44.68%
-    def addBinary(self, a: str, b: str) -> str:
+    def addBinary_mine(self, a: str, b: str) -> str:
         bytes_a = [int(c) for c in a][::-1]
         bytes_b = [int(c) for c in b][::-1]
         len_a = len(a)
