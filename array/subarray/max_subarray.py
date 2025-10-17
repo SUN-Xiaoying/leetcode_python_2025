@@ -42,10 +42,7 @@ class Solution:
                 r=i
                 ans = pre
 
-
         return l, r, ans
-
-
 
 
 s = Solution()
