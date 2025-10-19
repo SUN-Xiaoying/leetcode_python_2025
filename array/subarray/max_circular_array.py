@@ -3,11 +3,31 @@ from typing import List
 
 
 class Solution:
+    # 28 ms Beats 97.74%
+    def maxSubarraySumCircular(self, nums: List[int]) -> int:
+        if len(nums) <= 2: return max(nums)
+        all_sum = 0 # if keep all_sum = nums[0]
+        # incorrectly misses the case where the entire array is the max subarray
+        min_pre, max_pre = 0, 0
+        min_sum, max_sum = nums[0], nums[0]
+
+        for i in range(len(nums)):
+            min_pre += nums[i]
+            max_pre += nums[i]
+            all_sum += nums[i]
+            if min_pre < min_sum: min_sum = min_pre
+            if max_pre > max_sum: max_sum = max_pre
+            if max_pre < 0: max_pre = 0
+            if min_pre > 0: min_pre = 0
+
+        if all_sum == min_sum: return max_sum
+        return max(all_sum - min_sum, max_sum)
+
     # 107 ms Beats 26.87%
     # 环形数组最大累加和，
     # 1. 不连续数组最大累加和
     # 2. 掐头去尾最小累加和
-    def maxSubarraySumCircular(self, nums: List[int]) -> int:
+    def maxSubarraySumCircular_from_one(self, nums: List[int]) -> int:
         if len(nums)<=2: return max(nums)
         max_sum, min_sum = float('-inf'), float('inf')
         max_pre, min_pre = nums[0], nums[0]
