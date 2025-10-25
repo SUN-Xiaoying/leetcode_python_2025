@@ -3,7 +3,7 @@
 #
 from typing import Optional
 
-from bst.bt_utils import TreeNode, build_tree_from_list
+from tree.utils import TreeNode, build_tree_from_list
 
 
 class Solution:

@@ -2,7 +2,7 @@
 # https://leetcode.com/explore/interview/card/top-interview-questions-easy/94/trees/555/
 #
 from typing import Optional
-from bst.bt_utils import TreeNode, build_tree_from_list
+from tree.utils import TreeNode, build_tree_from_list
 
 
 # You are here!

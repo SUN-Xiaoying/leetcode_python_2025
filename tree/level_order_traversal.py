@@ -4,7 +4,7 @@
 from collections import deque
 from typing import Optional, List
 
-from bst.bt_utils import TreeNode, build_tree_from_list, tree_to_array
+from tree.utils import TreeNode, build_tree_from_list, tree_to_array
 
 
 class Solution:

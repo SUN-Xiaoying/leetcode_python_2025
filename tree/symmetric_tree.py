@@ -2,7 +2,7 @@
 from collections import deque
 from typing import Optional
 
-from bst.bt_utils import build_tree_from_list, TreeNode
+from tree.utils import build_tree_from_list, TreeNode
 
 
 class Solution:
