@@ -11,9 +11,13 @@ class ListNode:
         self.next = next
 
 class Solution:
-    # 不是我写的，需要返工
-    # 9ms Beats 69.39%
+    # TODO: 别用 heapq
     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+
+
+
+    # 9ms Beats 69.39%
+    def mergeKLists_best(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
         minheap = []
         head = ListNode(0)
         # 头部生成小根堆

@@ -27,7 +27,7 @@ class Solution:
             for b in range(col):
                 c, d, k = a + ans, b + ans, ans + 1
                 while c<row and d<col:
-                    if (get_sum(a,b,c,d) - get_sum(a+1, b+1, c-1, d-1)) == (k-1)<<2: # why k*4 is not correct?
+                    if (get_sum(a,b,c,d) - get_sum(a+1, b+1, c-1, d-1)) == (k-1)<<2: # why k*4 is not correct? It should be (k-1)*4
                         ans = k
                     c+=1
                     d+=1

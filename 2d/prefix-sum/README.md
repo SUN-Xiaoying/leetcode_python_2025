@@ -28,3 +28,17 @@ for i in range(rows):
 ```python
  sum[c][d] - sum[a-1][d] - sum[c][b-1] + sum[a-1][b-1]
 ```
+
+# 二维差分
+
+2D difference array
+
+> 左上不变
+
+```python
+    def add(a:int, b:int, c:int, d:int, v:int):
+        diff[a][b] += v
+        diff[a][d+1] -= v
+        diff[c+1][b] -= v
+        diff[c+1][d+1] += v
+```
