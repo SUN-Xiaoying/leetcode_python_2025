@@ -4,12 +4,7 @@ from heapq import heapify
 from typing import List, Optional
 import heapq
 
-
-# Definition for singly-linked list.
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
+from heap.helper import create_linked_list, print_list, ListNode
 
 class Solution:
 
@@ -88,28 +83,9 @@ class Solution:
 
         return dummy.next
 
-# Helper to create list from array for testing
-def create_linked_list(arr):
-    dummy = ListNode(0)
-    curr = dummy
-    for x in arr:
-        curr.next = ListNode(x)
-        curr = curr.next
-    return dummy.next
-
-# Helper to print linked list
-def print_list(node):
-    vals = []
-    while node:
-        vals.append(str(node.val))
-        node = node.next
-    print(" -> ".join(vals))
-
-
 # Create input: list of linked lists
 input_lists = [[1,4,5],[1,3,4],[2,6]]
 linked_lists = [create_linked_list(lst) for lst in input_lists]
-
 
 s = Solution()
 # [1,1,2,3,4,4,5,6]
