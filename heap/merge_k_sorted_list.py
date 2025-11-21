@@ -1,5 +1,6 @@
-# https://leetcode.com/problems/merge-k-sorted-lists/description/?envType=problem-list-v2&envId=heap-priority-queue
+# https://leetcode.com/problems/merge-k-sorted-lists/description/
 # Hard
+from heapq import heapify
 from typing import List, Optional
 import heapq
 
@@ -11,9 +12,59 @@ class ListNode:
         self.next = next
 
 class Solution:
+
+    def heapinsert(self, arr: List[ListNode], i: int):
+        while i > 0 and arr[i].val < arr[(i - 1) // 2].val:
+            arr[(i - 1) // 2], arr[i] = arr[i], arr[(i - 1) // 2]
+            i = (i - 1) // 2
+
+    def heapify(self, arr: List[ListNode], i: int):
+        l = i * 2 + 1
+        size = len(arr)
+        while l < size:
+            best = l + 1 if l + 1 < size and arr[l + 1].val < arr[l].val else l
+            if arr[best].val < arr[i].val:
+                arr[best], arr[i] = arr[i], arr[best]
+                i = best
+                l = i * 2 + 1
+            else: break
+
+    def heappush(self, minheap: List[ListNode], item: ListNode):
+        minheap.append(item)
+        self.heapinsert(minheap, len(minheap) - 1)
+
+    def heappop(self, minheap: List[ListNode]):
+        if not minheap:
+            return None
+
+        minheap[0], minheap[-1] = minheap[-1], minheap[0]
+        item = minheap.pop()
+
+        if minheap:
+            self.heapify(minheap, 0)
+
+        return item
+
+    # 27 ms Beats 18.92%
     # TODO: 别用 heapq
     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+        head = ListNode(0)
+        tail = head
+        minheap = []
 
+        for h in lists:
+            if h:
+                self.heappush(minheap,h)
+
+        while minheap:
+            node = self.heappop(minheap)
+            tail.next = node
+            tail = tail.next
+
+            if node.next:
+                self.heappush(minheap, node.next)
+
+        return head.next
 
 
     # 9ms Beats 69.39%
@@ -37,28 +88,30 @@ class Solution:
 
         return dummy.next
 
-def build_linked_list(values):
+# Helper to create list from array for testing
+def create_linked_list(arr):
     dummy = ListNode(0)
-    current = dummy
-    for v in values:
-        current.next = ListNode(v)
-        current = current.next
+    curr = dummy
+    for x in arr:
+        curr.next = ListNode(x)
+        curr = curr.next
     return dummy.next
 
-# Helper: Convert linked list to Python list
-def linked_list_to_list(node):
-    result = []
+# Helper to print linked list
+def print_list(node):
+    vals = []
     while node:
-        result.append(node.val)
+        vals.append(str(node.val))
         node = node.next
-    return result
+    print(" -> ".join(vals))
+
 
 # Create input: list of linked lists
 input_lists = [[1,4,5],[1,3,4],[2,6]]
-linked_lists = [build_linked_list(lst) for lst in input_lists]
+linked_lists = [create_linked_list(lst) for lst in input_lists]
 
 
 s = Solution()
 # [1,1,2,3,4,4,5,6]
-merged = s.mergeKLists(linked_lists)
+print_list(s.mergeKLists(linked_lists))
 
