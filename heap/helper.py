@@ -20,3 +20,10 @@ def print_list(node):
         vals.append(str(node.val))
         node = node.next
     print(" -> ".join(vals))
+
+
+# Definition of Interval:
+class Interval(object):
+    def __init__(self, start, end):
+        self.start = start
+        self.end = end

@@ -4,6 +4,7 @@ from heap.helper import create_linked_list, print_list, ListNode
 
 class Solution:
     # 0 ms Beats 100.00%
+    # Eazy一遍过，不错不错
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
         head = ListNode(0)
         tail = head
