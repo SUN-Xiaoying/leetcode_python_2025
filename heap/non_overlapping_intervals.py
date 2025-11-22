@@ -4,21 +4,9 @@ import heapq
 
 class Solution:
 
-
-
     def eraseOverlapIntervals(self, intervals: List[List[int]]) -> int:
-        # 最大线段重合长度
-        intervals.sort(key=lambda x: x[0])
-        ans = 0
-        minheap = []
 
-        for interval in intervals:
-            while minheap and minheap[0] <= interval[0]:
-                heapq.heappop(minheap)
-            heapq.heappush(minheap, interval[1])
-            ans = max(ans, len(minheap))
 
-        return ans
 
 s = Solution()
 # 1

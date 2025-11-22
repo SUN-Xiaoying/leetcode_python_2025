@@ -1,4 +1,5 @@
 # https://www.lintcode.com/problem/919/
+# medium
 import heapq
 from typing import (
     List,
