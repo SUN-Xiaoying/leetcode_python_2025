@@ -7,14 +7,6 @@ from typing import (
 
 from heap.helper import Interval
 
-"""
-Definition of Interval:
-class Interval(object):
-    def __init__(self, start, end):
-        self.start = start
-        self.end = end
-"""
-
 class Solution:
     # 最大线段重合长度
     # Beat percent 96.9%

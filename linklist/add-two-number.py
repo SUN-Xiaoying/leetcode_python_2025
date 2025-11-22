@@ -1,8 +1,8 @@
-# https://leetcode.com/problems/add-two-numbers/description/?envType=problem-list-v2&envId=linked-list
+# https://leetcode.com/problems/add-two-numbers/description/
 # https://www.bilibili.com/list/8888480?sid=3509640&oid=659355657&bvid=BV1bh4y1r75d
 from typing import Optional
 
-from linklist.utils import ListNode
+from helper import ListNode
 
 class Solution:
     # 3ms Beats 72.53%
